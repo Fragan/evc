@@ -1,13 +1,11 @@
 package loader;
 
-import java.awt.GraphicsConfiguration;
 import java.io.FileNotFoundException;
 
 import javax.media.j3d.AmbientLight;
 import javax.media.j3d.Background;
 import javax.media.j3d.BoundingSphere;
 import javax.media.j3d.BranchGroup;
-import javax.media.j3d.Canvas3D;
 import javax.media.j3d.DirectionalLight;
 import javax.media.j3d.TransformGroup;
 import javax.vecmath.Color3f;
@@ -17,19 +15,11 @@ import javax.vecmath.Vector3f;
 import org.jdesktop.j3d.loaders.vrml97.VrmlLoader;
 
 import com.sun.j3d.loaders.Scene;
-import com.sun.j3d.utils.applet.MainFrame;
-import com.sun.j3d.utils.behaviors.keyboard.KeyNavigatorBehavior;
-import com.sun.j3d.utils.picking.PickTool;
-import com.sun.j3d.utils.picking.behaviors.PickRotateBehavior;
-import com.sun.j3d.utils.picking.behaviors.PickTranslateBehavior;
-import com.sun.j3d.utils.picking.behaviors.PickZoomBehavior;
-import com.sun.j3d.utils.universe.SimpleUniverse;
 
 public class GenericVrmlLoader {
-
-	private static final long serialVersionUID = 1L;
+	
+	
 	private String fileName;
-	private SimpleUniverse u;
 
 	public GenericVrmlLoader(String fileName) {
 		this.fileName = fileName;
@@ -114,21 +104,21 @@ public class GenericVrmlLoader {
 		return objRoot;
 	}
 
-	public void enableInteraction(BranchGroup objRoot, Canvas3D c) {
-		BoundingSphere bounds = new BoundingSphere(new Point3d(0, 0, 0), 100);
-		PickRotateBehavior prb = new PickRotateBehavior(objRoot, c, bounds);
-		prb.setMode(PickTool.GEOMETRY);
-		prb.setTolerance(0.0f);
-		objRoot.addChild(prb);
-		PickTranslateBehavior ptb = new PickTranslateBehavior(objRoot, c, bounds);
-		ptb.setMode(PickTool.GEOMETRY);
-		ptb.setTolerance(0.0f);
-		objRoot.addChild(ptb);
-		PickZoomBehavior pzb = new PickZoomBehavior(objRoot, c, bounds);
-		pzb.setMode(PickTool.GEOMETRY);
-		pzb.setTolerance(0.0f);
-		objRoot.addChild(pzb);
-	}	
+//	public void enableInteraction(BranchGroup objRoot, Canvas3D c) {
+//		BoundingSphere bounds = new BoundingSphere(new Point3d(0, 0, 0), 100);
+//		PickRotateBehavior prb = new PickRotateBehavior(objRoot, c, bounds);
+//		prb.setMode(PickTool.GEOMETRY);
+//		prb.setTolerance(0.0f);
+//		objRoot.addChild(prb);
+//		PickTranslateBehavior ptb = new PickTranslateBehavior(objRoot, c, bounds);
+//		ptb.setMode(PickTool.GEOMETRY);
+//		ptb.setTolerance(0.0f);
+//		objRoot.addChild(ptb);
+//		PickZoomBehavior pzb = new PickZoomBehavior(objRoot, c, bounds);
+//		pzb.setMode(PickTool.GEOMETRY);
+//		pzb.setTolerance(0.0f);
+//		objRoot.addChild(pzb);
+//	}	
 	
 	
 }

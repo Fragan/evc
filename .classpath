@@ -9,7 +9,6 @@
 	<classpathentry kind="lib" path="lib/ext/j3dcore.jar"/>
 	<classpathentry kind="lib" path="lib/ext/j3dutils.jar"/>
 	<classpathentry kind="lib" path="lib/ext/vecmath.jar"/>
-	<classpathentry kind="var" path="LD_LIBRARY_PATH"/>
 	<classpathentry kind="lib" path="lib/j3d-vrml97.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
