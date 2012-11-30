@@ -24,7 +24,7 @@ public class CanvasLoader extends Canvas3D {
 	public CanvasLoader() {
 		super(SimpleUniverse.getPreferredConfiguration());
 		
-		gvl = new GenericVrmlLoader("/ws/29001933/evc/java3d/samples/colorcube2.wrl");
+		gvl = new GenericVrmlLoader("samples/colorcube2.wrl");
 		BranchGroup scene = gvl.createSceneGraph();
 		
 
@@ -40,7 +40,10 @@ public class CanvasLoader extends Canvas3D {
 		
 		// creation d'un navigateur
 		vpTrans = ((SharedUniverse) universe).getViewingPlatform().getViewPlatformTransform(); // noeud camera
+		try {
 		vpTrans.setCapability(TransformGroup.ALLOW_TRANSFORM_WRITE);
+		}
+		catch(Exception e) {}
 		
 		KeyNavigatorBehavior keyNavBeh = new KeyNavigatorBehavior(vpTrans);
 		keyNavBeh.setSchedulingBounds(new BoundingSphere(new Point3d(), 1000.0));
